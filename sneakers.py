@@ -154,13 +154,4 @@ def mostrar_todos_sneakers():
 
 # uvicorn sneakers:app --reload
 
-print("hola")
-print("hola")
-print("hola")
-print("hola")
-print("hola")
-print("hola")
-print("hola")
-print("hola")
-print("hola")
-print("hola")
+

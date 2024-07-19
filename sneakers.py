@@ -70,3 +70,31 @@ def mostrar_todos_sneakers():
     return inventario
 
 # uvicorn sneakers:app --reload
+
+
+
+from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
+from typing import Dict
+
+app = FastAPI()
+
+# Modelo de datos para representar un libro
+class Book(BaseModel):
+    title: str
+    author: str
+    year: int
+
+# Base de datos ficticia para almacenar los libros
+db: Dict[int, Book] = {}
+
+# Contador para asignar IDs únicos a los libros
+book_id_counter = 0
+
+# Ruta para crear un nuevo libro
+@app.post('/books/')
+def create_book(book: Book):
+    global book_id_counter
+    book_id_counter += 1
+    db[book_id_counter] = book
+    return {"message": "Libro creado exitosamente", "book_id": book_id_counter}

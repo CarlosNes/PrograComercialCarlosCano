@@ -70,3 +70,14 @@ def mostrar_todos_sneakers():
     return inventario
 
 # uvicorn sneakers:app --reload
+
+print("hola")
+print("hola")
+print("hola")
+print("hola")
+print("hola")
+print("hola")
+print("hola")
+print("hola")
+print("hola")
+print("hola")
